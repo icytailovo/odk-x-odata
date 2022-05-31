@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * This test used https://survey-demo.odk-x.org for testing
+ */
 @TestPropertySource(locations="classpath:test.properties")
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
 class OdkXOdataApplicationTests {
@@ -35,6 +38,10 @@ class OdkXOdataApplicationTests {
 
     }
 
+    /**
+     * Test for getting all tables name with http://127.0.0.1:8080/OData/V1.0/
+     * @throws Exception
+     */
     @Test
     public void testGetAllTables() throws Exception {
         HttpHeaders headers = new HttpHeaders();
@@ -57,6 +64,10 @@ class OdkXOdataApplicationTests {
 
     }
 
+    /**
+     * Test for getting metadata for a single/all table(s) with http://127.0.0.1:8080/OData/V1.0/$metadata
+     * @throws Exception
+     */
     @Test
     public void testMetadata() throws Exception {
         HttpHeaders headers = new HttpHeaders();
@@ -95,6 +106,10 @@ class OdkXOdataApplicationTests {
 
     }
 
+    /**
+     * Test for getting metadata for a single table's (household) data with http://127.0.0.1:8080/OData/V1.0/household
+     * @throws Exception
+     */
     @Test
     public void testGetTableData() throws Exception {
         HttpHeaders headers = new HttpHeaders();

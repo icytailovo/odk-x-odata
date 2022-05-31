@@ -183,11 +183,9 @@ public class SyncEdmProvider extends CsdlAbstractEdmProvider {
      */
     private List<CsdlProperty> formatProperties(Map<String, FullQualifiedName> tableDef) {
         List<CsdlProperty> properties = new ArrayList<>();
-        // fixed EntityType
         properties.add(new CsdlProperty().setName("Row Id").setType(EdmPrimitiveTypeKind.String.getFullQualifiedName()));
         properties.add(new CsdlProperty().setName("Create User").setType(EdmPrimitiveTypeKind.String.getFullQualifiedName()));
         properties.add(new CsdlProperty().setName("Update User").setType(EdmPrimitiveTypeKind.String.getFullQualifiedName()));
-
         for (Map.Entry<String, FullQualifiedName> e : tableDef.entrySet()) {
             CsdlProperty property = new CsdlProperty()
                                         .setName(e.getKey())

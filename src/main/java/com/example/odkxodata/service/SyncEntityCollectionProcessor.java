@@ -156,7 +156,7 @@ public class SyncEntityCollectionProcessor implements EntityCollectionProcessor 
         String type = OdataType.getName();
         // for String type (note all non-integer, non-double and non-boolean types are represented as String Type)
         // null values, set the property value be "" so that client side's only have very few null values in their data
-        if (allowNullOutput && type.equals("String") && rowValue == null) {
+        if (!allowNullOutput && type.equals("String") && rowValue == null) {
             return new Property(null, colName, ValueType.PRIMITIVE, "");
         }
         // for non-String type(integer, double, boolean) null values, we need to set valid values with

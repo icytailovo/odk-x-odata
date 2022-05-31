@@ -1,4 +1,7 @@
-# Sync Endpoint OData Feed
+# Sync Endpoint OData Service
+
+## Description
+This is the service that supports data export functionality allowing the data flow from the Sync Endpoint and eventually get propagated to BI systems.
 
 ## Prerequisites
 - Git
